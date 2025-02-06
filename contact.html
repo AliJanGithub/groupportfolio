@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .code-container {
+            background: #1e1e1e;
+            color: #dcdcdc;
+            font-family: monospace;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            max-height: 400px;
+            border: 1px solid #333;
+        }
+
+        .project-link {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">TeamX</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Projects</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project">
+        <div class="container">
+            <h2>Project Details</h2>
+            <p>Check out the project here: <a href="https://example.com" target="_blank" class="project-link">Visit
+                    Problem no 4.25
+                    Project (1)</a></p>
+        </div>
+        <div class="container">
+            <h3>Project Code</h3>
+            <div class="code-container">
+                <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Game Project&lt;/title&gt;
+    &lt;style&gt;
+  
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 60px);
+            grid-template-rows: repeat(4, 60px);
+            gap: 10px;
+            margin: 20px auto;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .grid div {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            background: #fff;
+            color: #333;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .grid div:hover {
+            transform: scale(1.1);
+            background: #ffd700;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ff4b5c;
+        }
+
+        #timer {
+            margin-top: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        #inputContainer {
+            margin-top: 20px;
+        }
+
+        #wordInput {
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            width: 200px;
+            text-align: center;
+            outline: none;
+        }
+
+        #startBtn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            background: #ff4b5c;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        #startBtn:hover {
+            background: #e63e50;
+        }
+  
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1 3-Letter Word Game&gt; &lt;/h1&gt;
+&lt;div class="grid" id="grid"&gt;&lt;/div&gt;
+&lt;p&gt;id="message">&lt;/p&gt;
+&lt;pid="timer"&gt;3:00&lt;p&gt;
+&lt;div id="inputContainer"&gt;
+&lt;input type="text" id="wordInput" placeholder="Enter a 3-letter word"&gt;
+    &lt;/div&gt;
+    &lt;button id="startBtn"&gt;Start Game&lt;/button&gt;
+    &lt;script&gt;
+    const dictionary = [
+    "fix", "own", "are", "fly", "odd", "ape", "fry", "our", "ace", "for",
+    "pet", "act", "got", "pat", "ask", "get", "peg", "arm", "god", "paw",
+    "age", "gel", "pup", "ago", "gas", "pit", "air", "hat", "put", "ate",
+    "hit", "pot", "all", "has", "pop", "but", "had", "pin", "bye", "how",
+    "rat", "bad", "her", "rag", "big", "his", "rub", "bed", "hen", "row",
+    "bat", "ink", "rug", "boy", "ice", "run", "bus", "ill", "rap", "bag",
+    "jab", "ram", "box", "jug", "sow", "bit", "jet", "see", "bee", "jam",
+    "saw", "buy", "jar", "set", "bun", "job", "sit", "cub", "jog", "sir",
+    "cat", "kit", "sat", "car", "key", "sob", "cut", "lot", "tap", "cow",
+    "lit", "tip", "cry", "let", "top", "cab", "lay", "tug", "can", "mat",
+    "tow", "dad", "man", "toe", "dab", "mad", "tan", "dam", "mug", "ten",
+    "did", "mix", "two", "dug", "map", "use", "den", "mum", "van", "dot",
+    "mud", "vet", "dip", "mom", "was", "day", "may", "wet", "ear", "met",
+    "win", "eye", "net", "won", "eat", "new", "wig", "end", "nap", "war",
+    "elf", "now", "why", "egg", "nod", "who", "far", "net", "way", "fat",
+    "not", "wow", "few", "nut", "you", "fan", "oar", "yes", "fun", "one",
+    "yak", "fit", "out", "yet", "fin", "owl", "zip", "fox", "old", "zap"
+];
+
+// Letters with higher probability (e.g., vowels)
+const letters = [
+    'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a',
+    'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b',
+    'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c',
+    'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd',
+    'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e', 'e',
+    'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f',
+    'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g', 'g',
+    'h', 'h', 'h', 'h', 'h', 'h', 'h', 'h', 'h', 'h',
+    'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i',
+    'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j',
+    'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k',
+    'l', 'l', 'l', 'l', 'l', 'l', 'l', 'l', 'l', 'l',
+    'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm',
+    'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n',
+    'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o',
+    'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p',
+    'q', 'q', 'q', 'q', 'q', 'q', 'q', 'q', 'q', 'q',
+    'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r',
+    's', 's', 's', 's', 's', 's', 's', 's', 's', 's',
+    't', 't', 't', 't', 't', 't', 't', 't', 't', 't',
+    'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u', 'u',
+    'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v',
+    'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w',
+    'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x',
+    'y', 'y', 'y', 'y', 'y', 'y', 'y', 'y', 'y', 'y',
+    'z', 'z', 'z', 'z', 'z', 'z', 'z', 'z', 'z', 'z'
+];
+
+// Generate a 4x4 grid of random letters
+function generateGrid() {
+    const grid = [];
+    for (let i = 0; i < 16; i++) {
+        grid.push(letters[Math.floor(Math.random() * letters.length)]);
+    }
+    return grid;
+}
+
+// Display the grid in the HTML
+function displayGrid(grid) {
+    const gridElement = document.getElementById('grid');
+    gridElement.innerHTML = '';
+    grid.forEach(letter => {
+        const cell = document.createElement('div');
+        cell.textContent = letter.toUpperCase();
+        gridElement.appendChild(cell);
+    });
+}
+
+// Check if a word can be formed in the grid
+function isWordInGrid(word, grid) {
+    const gridSize = 4;
+    const directions = [
+        [-1, -1], [-1, 0], [-1, 1],
+        [0, -1], [0, 1],
+        [1, -1], [1, 0], [1, 1]
+    ];
+
+    function dfs(x, y, index, visited) {
+        if (index === word.length) return true;
+        if (x < 0 || x >= gridSize || y < 0 || y >= gridSize) return false;
+        if (visited[x][y] || grid[x * gridSize + y] !== word[index]) return false;
+
+        visited[x][y] = true;
+        for (const [dx, dy] of directions) {
+            if (dfs(x + dx, y + dy, index + 1, visited)) return true;
+        }
+        visited[x][y] = false;
+        return false;
+    }
+
+    for (let i = 0; i < gridSize; i++) {
+        for (let j = 0; j < gridSize; j++) {
+            if (dfs(i, j, 0, Array.from({ length: gridSize }, () => Array(gridSize).fill(false)))) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+// Find all possible words in the grid
+function findAllWordsInGrid(grid) {
+    const wordsInGrid = new Set();
+    dictionary.forEach(word => {
+        if (isWordInGrid(word, grid)) {
+            wordsInGrid.add(word);
+        }
+    });
+    return wordsInGrid;
+}
+
+let timeRemaining = 3 * 60; // 3 minutes in seconds
+let timerInterval;
+let foundWords = new Set();
+let grid;
+let allWordsInGrid;
+
+function startTimer() {
+    clearInterval(timerInterval); // Clear any existing timer
+    timerInterval = setInterval(function () {
+        const minutes = Math.floor(timeRemaining / 60);
+        const seconds = timeRemaining % 60;
+        document.getElementById('timer').textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+        if (timeRemaining === 0) {
+            clearInterval(timerInterval);
+            endGame();
+        } else {
+            timeRemaining--;
+        }
+    }, 1000);
+}
+
+function endGame() {
+    clearInterval(timerInterval); // Stop the timer
+    document.getElementById('message').textContent = "Game Over!";
+    document.getElementById('wordInput').disabled = true;
+    document.getElementById('startBtn').disabled = false;
+
+    // Calculate missed words from the grid
+    const missedWords = Array.from(allWordsInGrid).filter(word => !foundWords.has(word));
+    document.getElementById('message').textContent += ` You found ${foundWords.size} words. Missed words: ${missedWords.join(', ')}`;
+}
+
+function checkWord() {
+    const word = document.getElementById('wordInput').value.toLowerCase();
+    document.getElementById('wordInput').value = ''; // Clear input
+
+    if (word === "quit") {
+        endGame();
+        return;
+    }
+
+    if (word.length !== 3) {
+        document.getElementById('message').textContent = "Please enter a 3-letter word.";
+        return;
+    }
+
+    if (foundWords.has(word)) {
+        document.getElementById('message').textContent = "You already found this word.";
+        return;
+    }
+
+    if (!dictionary.includes(word)) {
+        document.getElementById('message').textContent = "This word is not in the dictionary.";
+        return;
+    }
+
+    if (!isWordInGrid(word, grid)) {
+        document.getElementById('message').textContent = "This word is not in the grid.";
+        return;
+    }
+
+    foundWords.add(word);
+    document.getElementById('message').textContent = "Word accepted!";
+    timeRemaining = 3 * 60; // Reset the timer
+    startTimer(); // Restart the timer
+
+    // Check if all words have been found
+    if (foundWords.size === allWordsInGrid.size) {
+        endGame();
+        document.getElementById('message').textContent = "Congratulations! You found all the words!";
+    }
+}
+
+// Start the game
+document.getElementById('startBtn').addEventListener('click', function () {
+    timeRemaining = 3 * 60; // Reset the timer
+    foundWords.clear(); // Clear found words
+    grid = generateGrid(); // Generate a new grid
+    allWordsInGrid = findAllWordsInGrid(grid); // Find all possible words in the grid
+    displayGrid(grid); // Display the grid
+    document.getElementById('message').textContent = ''; // Clear messages
+    document.getElementById('wordInput').disabled = false;
+    document.getElementById('startBtn').disabled = true;
+    startTimer(); // Start the timer
+});
+
+// Submit word on pressing Enter
+document.getElementById('wordInput').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        checkWord();
+    }
+});
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </pre>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Our Awesome Team. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
