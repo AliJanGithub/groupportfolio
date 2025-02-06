@@ -40,7 +40,7 @@ const teamMembers = [
     {
       name: "Khadija Khan",
       role: "B21110006051",
-      image: "images/khadija.jpeg",
+      image: "images/Khadija.jpeg",
       bio: "Ensures the server-side runs smoothly and efficiently."
     },
     {
