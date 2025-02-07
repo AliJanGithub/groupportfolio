@@ -21,7 +21,7 @@ const teamMembers = [
     {
       name: "Huzaifa Rehan",
       role: "B21110006045",
-      image: "images/member4.jpg",
+      image: "images/huzaifa.jpeg",
       bio: "Ensures projects are delivered on time and within budget."
     },
    
@@ -53,7 +53,7 @@ const teamMembers = [
     {
       name: "Mahnoor Shehraz",
       role: "N/A",
-      image: "images/member9.jpg",
+      image: "images/mahnoor.jpeg",
       bio: "Passionate about building responsive and interactive websites."
     },
    
